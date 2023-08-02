@@ -1,0 +1,17 @@
+spring:
+  kafka:
+    consumer:
+      properties:
+        spring.json.trusted.packages: "*"
+
+    bootstrap-servers: localhost:9092
+    template:
+      default-topic: notification
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+#      properties:
+#          spring:
+#            json:
+#              type:
+#                mapping: com.example.notificationservice.event.CartPlacedEvent
